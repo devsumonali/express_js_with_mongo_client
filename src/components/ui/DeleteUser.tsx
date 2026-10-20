@@ -15,8 +15,13 @@ import {
      DialogTitle,
      DialogTrigger,
 } from '@/components/ui/dialog';
+import { TUserData } from '@/lib/utils';
 
-const DeleteUser = ({ id }) => {
+interface TDeleteUser {
+     id: TUserData['_id'];
+}
+
+const DeleteUser = ({ id }: TDeleteUser) => {
      const router = useRouter();
 
      const [open, setOpen] = useState(false);
@@ -37,6 +42,7 @@ const DeleteUser = ({ id }) => {
                }
 
                const result = await res.json();
+               console.log(result);
 
                // Close dialog
                setOpen(false);

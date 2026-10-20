@@ -18,14 +18,19 @@ import {
 import { Field, FieldGroup, FieldLabel } from '@/components/ui/field';
 
 import { Input } from '@/components/ui/input';
+import { TUserData } from '@/lib/utils';
 
-export function EditUser({ user }) {
+interface TEditUserProps {
+     user: TUserData;
+}
+
+export function EditUser({ user }: TEditUserProps) {
      const router = useRouter();
 
      const [open, setOpen] = useState(false);
      const [loading, setLoading] = useState(false);
 
-     const handleSubmit = async (e) => {
+     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
 
           const form = e.currentTarget;

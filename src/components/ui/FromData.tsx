@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 const FromData = () => {
      const router = useRouter();
 
-     const handleSubmit = async (e) => {
+     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
 
           const form = e.currentTarget;
@@ -28,6 +28,7 @@ const FromData = () => {
                }
 
                const result = await res.json();
+               console.log(result);
 
                // Reset form
                form.reset();

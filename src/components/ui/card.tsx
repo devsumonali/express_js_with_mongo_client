@@ -1,7 +1,12 @@
+import { TUserData } from '@/lib/utils';
 import DeleteUser from './DeleteUser';
 import { EditUser } from './EditUser';
 
-const Card = ({ users }) => {
+interface TUserCardProps {
+     users: TUserData[];
+}
+
+const Card = ({ users }: TUserCardProps) => {
      return (
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">
                {users.map((user) => (
